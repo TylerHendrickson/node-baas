@@ -17,7 +17,9 @@ pipeline {
             }
         }
         stage('Generate AMI') {
-            steps {}
+            steps {
+                sh 'echo "This is a step"'
+            }
         }
     }
 }
