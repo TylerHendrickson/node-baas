@@ -11,6 +11,7 @@ pipeline {
     stages {
         stage('Install') {
             steps {
+                sh 'npm i -g npm'
                 sh 'npm ci'
             }
         }
