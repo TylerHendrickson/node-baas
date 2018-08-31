@@ -11,7 +11,7 @@ pipeline {
     stages {
         stage('Install') {
             steps {
-                sh 'sudo npm update -g npm'
+                sh 'npm update -g npm'
                 sh 'npm ci'
             }
         }
