@@ -1,12 +1,10 @@
 pipeline {
     agent any
+
+    tools {nodejs "node"}
+
     stages {
         stage('Install') {
-            steps {
-                sh 'npm i -g npm@latest'
-            }
-        }
-        stage('Build') {
             steps {
                 sh 'npm ci'
             }
@@ -16,9 +14,14 @@ pipeline {
                 sh 'npm test'
             }
         }
+        stage('Bundle') {
+            steps {
+                sh 'echo "Coming soon!"'
+            }
+        }
         stage('Generate AMI') {
             steps {
-                sh 'echo "This is a step"'
+                sh 'echo "Nothing yet!"'
             }
         }
     }
