@@ -1,5 +1,10 @@
 pipeline {
-    agent any
+    agent {
+        docker {
+            image 'node:9'
+            args '-v $PWD:/usr/src/app'
+        }
+    }
 
     tools {nodejs "node"}
 
