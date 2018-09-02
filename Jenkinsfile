@@ -8,17 +8,9 @@ pipeline {
     environment { HOME="." }
 
     stages {
-        stage('Pre-Install') {
-            steps {
-                sh 'npm i -g npm'
-            }
-        }
-
         stage('Install') {
             steps {
-                sh 'pwd'
-                // sh 'rm -rf ./node_modules' TODO: Need this?
-                sh 'npm ci --verbose'
+                sh 'npm install'
             }
         }
 
