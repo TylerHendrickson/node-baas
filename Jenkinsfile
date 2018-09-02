@@ -1,8 +1,7 @@
 pipeline {
     agent {
         docker {
-            image 'node:9-stretch'
-            // args '-v $PWD:/usr/src/app'
+            image 'node:8-stretch'
         }
     }
 
@@ -18,11 +17,11 @@ pipeline {
         stage('Install') {
             steps {
                 sh 'pwd'
-                sh 'rm -rf ./node_modules'
+                // sh 'rm -rf ./node_modules' TODO: Need this?
                 sh 'npm ci --verbose'
             }
         }
-        
+
         stage('Test') {
             steps {
                 sh 'npm test'
