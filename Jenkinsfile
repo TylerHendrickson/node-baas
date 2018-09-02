@@ -1,7 +1,7 @@
 pipeline {
     agent {
         docker {
-            image 'node:8'
+            image 'node:8-stretch'
             // args '-v $PWD:/usr/src/app'
         }
     }
@@ -16,7 +16,7 @@ pipeline {
             }
         }
         
-        stage('Test') {
+        stage('Test') {g
             steps {
                 sh 'npm test'
             }
