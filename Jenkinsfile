@@ -9,10 +9,6 @@ pipeline {
     environment { HOME="." }
 
     stages {
-        stage('Source') {
-            checkout scm
-        }
-
         stage('Install') {
             steps {
                 sh 'pwd'
